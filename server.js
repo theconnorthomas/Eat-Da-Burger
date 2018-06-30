@@ -26,6 +26,6 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/burgers_controller.js');
 
 app.use('/', routes);
-
+console.log(process.env.JAWSDB_URL);
 app.listen(port);
 console.log(`Listening on port: ${port}`);

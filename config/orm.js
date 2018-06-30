@@ -28,10 +28,10 @@ var orm = {
 	// Function that returns all table entries
 	all: function(tableInput, cb) {
 		// Construct the query string that returns all rows from the target table
-		var queryString = `SELECT * FROM ${tableInput};`;
+		var queryString = `SELECT * FROM ?;`;
 
 		// Perform the database query
-		connection.query(queryString, function(err, result) {
+		connection.query(queryString, [tableInput],function(err, result) {
 			if (err) {
 				throw err;
 			}
